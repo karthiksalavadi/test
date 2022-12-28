@@ -10,7 +10,7 @@ phases:
       - echo Logging in to Amazon ECR...
       - aws --version
       - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
-      - REPOSITORY_URI=$(986697141583.dkr.ecr.us-east-1.amazonaws.com/testdocker..repositoryUri --output=text)
+      - REPOSITORY_URI=$(986697141583.dkr.ecr.us-east-1.amazonaws.com/testapp/testdocker..repositoryUri --output=text)
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - IMAGE_TAG=${COMMIT_HASH:=latest}
   build:
